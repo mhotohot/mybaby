@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,700;1,400&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 40px 20px;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 25s ease infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .content {
+            background-color: rgba(255, 255, 255, 0.92);
+            padding: 30px 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 700px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1.5s ease-in-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .heart-button-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .heart-button {
+            all: unset;
+            cursor: pointer;
+            color: #d83a56;
+            font-size: 5em;
+            text-shadow: 0 4px 15px rgba(216, 58, 86, 0.4);
+            background: none;
+            border: none;
+            transition: color 0.4s ease, transform 0.4s ease;
+            animation: pulse-heart 2.5s infinite;
+            z-index: 2;
+            position: relative;
+        }
+
+        .heart-button:hover {
+            color: #c71585;
+            transform: scale(1.1);
+        }
+
+        @keyframes pulse-heart {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        .heart-burst::before, .heart-burst::after {
+            content: "❤";
+            position: absolute;
+            font-size: 20px;
+            color: #e73c7e;
+            opacity: 0;
+            animation: burst 1s ease-out;
+            z-index: 1;
+        }
+        .heart-burst::after {
+            animation-delay: 0.1s;
+        }
+        @keyframes burst {
+            0% { transform: scale(0.5) translateY(0); opacity: 1; }
+            100% { transform: scale(1) translateY(-80px) translateX(40px) rotate(30deg); opacity: 0; }
+        }
+        .heart-burst::before {
+            animation-name: burst-left;
+        }
+        @keyframes burst-left {
+             0% { transform: scale(0.5) translateY(0); opacity: 1; }
+            100% { transform: scale(1) translateY(-70px) translateX(-50px) rotate(-40deg); opacity: 0; }
+        }
+
+        h3 {
+            color: #c71585;
+            margin-bottom: 5px;
+            font-size: 3em;
+            font-weight: normal;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .name {
+            color: #c71585;
+            margin-top: 0;
+            margin-bottom: 30px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 3.2em;
+            font-weight: normal;
+        }
+
+        p {
+            color: #4b4b4b;
+            margin-top: 20px;
+            font-size: 1.25em;
+            line-height: 1.7;
+            font-style: normal;
+        }
+        
+        #image-container {
+            max-width: 320px;
+            position: relative;
+            margin: 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        #image-container img {
+            width: 100%;
+            vertical-align: middle;
+        }
+        
+        .hidden {
+            display: none;
+        }
+
+        audio {
+            margin-top: 25px;
+            width: 90%;
+            filter: hue-rotate(300deg);
+        }
+
+        #extra-audio {
+            display: none;
+        }
+        
+        .closing {
+            font-size: 1.6em;
+            color: #4b4b4b;
+            margin-top: 30px;
+            margin-bottom: 5px;
+            font-style: normal;
+            font-weight: bold;
+        }
+
+        .signature {
+            color: #c71585;
+            font-weight: normal;
+            font-size: 2.5em;
+            margin-top: 5px;
+            font-family: 'Great Vibes', cursive;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="content">
+        <div class="heart-button-container" id="heart-container">
+            <button class="heart-button" aria-label="Play a special message">&#10084;</button>
+        </div>
+
+        <h3>My dearest beautiful baby,</h3>
+        <h2 class="name">💚Ley Jin, my prettiest baby💚</h2>
+
+        <p>Distance may keep us apart, but not a single thought of you will ever leave my mind. I wanted to take a moment to truly express the depth of my gratitude and love since we first connected. Even though we haven't had the chance to meet in person yet, I feel an incredible sense of comfort and ease with you. It's a feeling I've honestly never experienced before—this profound level of assurance in my entire life.</p>
+        
+        <p>Your words are a constant source of comfort and peace for me. Every single time we talk, I feel genuinely loved, and it brings me so much happiness. You've brought such a wonderful light into my life, and I'm so incredibly grateful for you.</p>
+
+        <div id="image-container">
+            <img id="image1" src="Baby1.jpeg" alt="My beautiful baby">
+            <img id="image2" src="Baby2.jpeg" alt="Her beautiful smile" class="hidden">
+        </div>
+
+        <p>I want to be the kind of partner who listens, who communicates openly, and who doesn’t let little things ruin our day. I love you with all my heart, and I'm committed to being the best partner I can be for you, baby.</p>
+
+        <p>I'm willing to grow, to learn, and to change for the better. I’m eager to listen to your needs, understand your feelings, and support you in every way possible. I promise to be patient, kind, and understanding, even when things get tough.</p>
+
+        <p>I’m grateful for the opportunity to love and be loved by you. As we continue this journey, I’ll strive to make you happy, make you smile, and make you feel loved every single day.</p>
+
+        <audio id="background-audio" controls>
+            <source src="cover.mp3" type="audio/mpeg">
+            Your browser does not support the audio tag.
+        </audio>
+
+        <audio id="extra-audio" src="final.mp3"></audio>
+
+        <p class="closing"><strong>Your baby,</strong></p>
+        <p class="signature">Martin H.</p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const backgroundAudio = document.getElementById('background-audio');
+            const extraAudio = document.getElementById('extra-audio');
+            const heartContainer = document.getElementById('heart-container');
+            const heartButton = document.querySelector('.heart-button');
+            const imageContainer = document.getElementById('image-container');
+            const image1 = document.getElementById('image1');
+            const image2 = document.getElementById('image2');
+
+            if (backgroundAudio) {
+                backgroundAudio.volume = 0.08;
+            }
+
+            const playAudio = () => {
+                if (backgroundAudio && backgroundAudio.paused) {
+                    backgroundAudio.play().catch(error => console.log("Audio autoplay was prevented. User interaction is needed."));
+                }
+                
+                if (extraAudio) {
+                    extraAudio.play().catch(error => console.log("Extra audio playback failed."));
+                    extraAudio.volume = 1.0; 
+                }
+                
+                heartContainer.classList.add('heart-burst');
+                setTimeout(() => {
+                    heartContainer.classList.remove('heart-burst');
+                }, 1000);
+
+                if (extraAudio) {
+                    extraAudio.onended = function() {
+                        if (backgroundAudio) backgroundAudio.volume = 0.7;
+                    };
+                }
+            };
+            
+            const changeImage = () => {
+                image1.classList.toggle('hidden');
+                image2.classList.toggle('hidden');
+            };
+
+            heartButton.addEventListener('click', playAudio);
+            imageContainer.addEventListener('click', changeImage);
+        });
+    </script>
+
+</body>
+</html>
